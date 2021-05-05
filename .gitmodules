@@ -1,0 +1,12 @@
+[submodule "submodules/makefiles"]
+	path = submodules/makefiles
+	url = git@github.com:asveikau/makefiles.git
+[submodule "submodules/common"]
+	path = submodules/common
+	url = git@github.com:asveikau/common.git
+[submodule "submodules/audio"]
+	path = submodules/audio
+	url = git@github.com:asveikau/audio.git
+[submodule "submodules/pollster"]
+	path = submodules/pollster
+	url = git@github.com:asveikau/pollster.git
