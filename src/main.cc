@@ -70,10 +70,20 @@ struct State
       if (!strcmp(key, "KEY_VOLUMEUP"))
       {
          ChangeVolume([] (float f) -> float { return f + VOLUME_INC; }, err);
+
+         error dummy;
+         if (!ERROR_FAILED(err) && mixer->IsMuted(0, &dummy))
+            mixer->SetMute(0, false, err);
       }
       else if (!strcmp(key, "KEY_VOLUMEDOWN"))
       {
          ChangeVolume([] (float f) -> float { return f - VOLUME_INC; }, err);
+      }
+      else if (!strcmp(key, "KEY_MUTE"))
+      {
+         error dummy;
+         bool muted = mixer->IsMuted(0, &dummy);
+         mixer->SetMute(0, !muted, err);
       }
    }
 
