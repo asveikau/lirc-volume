@@ -15,7 +15,7 @@ for the Unix domain socket.
 
 ## Building
 
-    $ git submodule update --init
+    $ git submodule update --init --recursive
     $ make
 
 Based on my experiences with some of the submodules, old versions of GCC (7 and
